@@ -1,0 +1,27 @@
+.blog-content p {
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+.blog-content blockquote {
+  border-left: 4px solid #e2e8f0;
+  padding-left: 1rem;
+  font-style: italic;
+  margin: 1.5rem 0;
+}
+
+.blog-content h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.blog-content a {
+  color: #0e1631;
+  text-decoration: underline;
+}
+
+.dark .blog-content a {
+  color: #ffffff;
+}

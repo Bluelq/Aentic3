@@ -1,0 +1,255 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Future Zen";
+  src: url("/fonts/future-zen.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%; /* Pure white */
+    --foreground: 0 0% 0%; /* Pure black */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 0 0% 95%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 0%;
+    --radius: 0.5rem;
+    --button-gradient: linear-gradient(90deg, rgba(10, 58, 63, 0.85) 0%, rgba(30, 11, 51, 0.85) 100%);
+    --navy-blue: 222 54% 13%; /* #0e1631 */
+    --cta-gradient: linear-gradient(90deg, #0f1a3a 0%, #1a0b33 100%); /* Reversed gradient */
+  }
+
+  .dark {
+    --background: 0 0% 0%; /* Pure black */
+    --foreground: 0 0% 100%; /* Pure white */
+    --card: 0 0% 0%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 0%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-space;
+  }
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-black to-gray-600 dark:from-white dark:to-gray-400;
+}
+
+.explore-button {
+  background: linear-gradient(90deg, rgba(10, 58, 63, 0.85) 0%, rgba(30, 11, 51, 0.85) 100%);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.explore-button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.company-name {
+  font-family: "Future Zen", sans-serif;
+  letter-spacing: 0.05em;
+}
+
+/* Enhanced framework box sequential breathing shadow effect with appropriate colors for both themes */
+@keyframes enhancedBreatheShadowLight {
+  0% {
+    box-shadow: 0 0 5px rgba(14, 22, 49, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(14, 22, 49, 0.8), 0 0 40px rgba(14, 22, 49, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(14, 22, 49, 0.4);
+  }
+}
+
+@keyframes enhancedBreatheShadowDark {
+  0% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.4);
+  }
+}
+
+.framework-box-1 {
+  animation: enhancedBreatheShadowLight 4s infinite;
+}
+
+.framework-box-2 {
+  animation: enhancedBreatheShadowLight 4s infinite;
+  animation-delay: 1.33s;
+}
+
+.framework-box-3 {
+  animation: enhancedBreatheShadowLight 4s infinite;
+  animation-delay: 2.66s;
+}
+
+.dark .framework-box-1 {
+  animation: enhancedBreatheShadowDark 4s infinite;
+}
+
+.dark .framework-box-2 {
+  animation: enhancedBreatheShadowDark 4s infinite;
+  animation-delay: 1.33s;
+}
+
+.dark .framework-box-3 {
+  animation: enhancedBreatheShadowDark 4s infinite;
+  animation-delay: 2.66s;
+}
+
+.framework-box-1:hover,
+.framework-box-2:hover,
+.framework-box-3:hover {
+  animation-play-state: paused;
+  transform: translateY(-2px);
+  transition: transform 0.3s ease;
+}
+
+.shadow-glow {
+  box-shadow: 0 0 15px rgba(14, 22, 49, 0.4);
+  animation: subtle-pulse 3s infinite alternate;
+}
+
+.dark .shadow-glow {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+  animation: subtle-pulse-dark 3s infinite alternate;
+}
+
+.shadow-glow-hover {
+  box-shadow: 0 0 20px rgba(14, 22, 49, 0.6);
+}
+
+.dark .shadow-glow-hover {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+@keyframes subtle-pulse {
+  0% {
+    box-shadow: 0 0 15px rgba(14, 22, 49, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(14, 22, 49, 0.5);
+  }
+}
+
+@keyframes subtle-pulse-dark {
+  0% {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+}
+
+.cta-button {
+  background: var(--cta-gradient);
+  color: white;
+  transition: all 0.3s ease;
+  border-radius: 0.375rem;
+  font-weight: 500;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 15px -3px rgba(26, 11, 51, 0.3);
+}
+
+/* Add these styles to the end of the file */
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background-color: currentColor;
+  margin-left: 2px;
+  animation: blink 1s infinite;
+}
+
+/* Enhanced dramatic effects for the hero section */
+.hero-gradient-bg {
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 70%);
+  pointer-events: none;
+}
+
+.dark .hero-gradient-bg {
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 70%);
+}
+
+/* Responsive title handling */
+@media (max-width: 640px) {
+  .hero-title {
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+  }
+}
+
+/* Modern futuristic font styling for Aentic */
+.font-futurezen {
+  font-family: "Future Zen", sans-serif;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
