@@ -143,7 +143,7 @@ export function Header() {
             <span className="sr-only">Toggle theme</span>
           </Button>
 
-          <Link href="/get-started" className="hidden md:inline-flex cta-button py-2 px-4">
+          <Link href="/contact" className="hidden md:inline-flex cta-button py-2 px-4">
             Explore
           </Link>
         </div>

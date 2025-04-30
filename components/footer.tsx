@@ -134,18 +134,30 @@ export function Footer() {
             </ul>
           </div>
         </div>
-        <div className="border-t mt-6 pt-4 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-black dark:text-white text-xs">© 2025 Aentic. All rights reserved.</p>
-          <div className="flex space-x-4 mt-2 md:mt-0">
-            <Link href="/privacy" className="text-black dark:text-white hover:underline text-xs">
-              Privacy Policy
-            </Link>
-            <Link href="/cookie-policy" className="text-black dark:text-white hover:underline text-xs">
-              Cookie Policy
-            </Link>
-            <Link href="/terms" className="text-black dark:text-white hover:underline text-xs">
-              Terms of Service
-            </Link>
+        <div className="border-t mt-6 pt-4">
+          <div className="flex flex-col md:flex-row justify-between items-center mb-4">
+            <p className="text-black dark:text-white text-xs">© 2025 Aentic. All rights reserved.</p>
+            <div className="flex flex-wrap justify-center gap-4 mt-2 md:mt-0">
+              <Link href="/privacy" className="text-black dark:text-white hover:underline text-xs">
+                Privacy Policy
+              </Link>
+              <Link href="/cookie-policy" className="text-black dark:text-white hover:underline text-xs">
+                Cookie Policy
+              </Link>
+              <Link href="/terms" className="text-black dark:text-white hover:underline text-xs">
+                Terms of Service
+              </Link>
+              <button
+                onClick={() => window.dispatchEvent(new CustomEvent("open-cookie-settings"))}
+                className="text-primary hover:underline text-xs"
+              >
+                Cookie Settings
+              </button>
+            </div>
+          </div>
+          <div className="text-center text-xs text-gray-500 dark:text-gray-400">
+            By using this website, you agree to our use of cookies and our Privacy Policy. We use cookies to ensure you
+            get the best experience on our website.
           </div>
         </div>
       </div>

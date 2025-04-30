@@ -44,6 +44,15 @@ export function CookieConsent() {
         setShowBanner(true)
       }
     }
+
+    // Listen for custom event to open cookie settings
+    const handleOpenCookieSettings = () => setOpen(true)
+    window.addEventListener("open-cookie-settings", handleOpenCookieSettings)
+
+    // Clean up event listener
+    return () => {
+      window.removeEventListener("open-cookie-settings", handleOpenCookieSettings)
+    }
   }, [])
 
   const savePreferences = (prefs: CookiePreferences) => {
