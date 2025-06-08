@@ -7,7 +7,25 @@ import { Footer } from "@/components/footer"
 import { ThemeProvider } from "@/components/theme-provider"
 import { GeometricBackground } from "@/components/geometric-background"
 import { CookieConsent } from "@/components/cookie-consent"
-
+import { Analytics } from '@vercel/analytics/next';
+ 
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <head>
+        <title>Next.js</title>
+      </head>
+      <body>
+        {children}
+        <Analytics />
+      </body>
+    </html>
+  );
+}
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
