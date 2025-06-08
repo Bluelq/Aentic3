@@ -62,7 +62,9 @@
     "framer-motion": "latest",
     "nodemailer": "latest"
   },
-  "devDependencies": {
+  {
+  "dependencies": {
+    "@vercel/analytics": "^1.0.0",
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
